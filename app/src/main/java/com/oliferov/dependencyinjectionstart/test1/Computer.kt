@@ -1,8 +1,6 @@
 package com.oliferov.dependencyinjectionstart.test1
 
-import javax.inject.Inject
-
-class Computer @Inject constructor (
+class Computer (
     val monitor: Monitor,
     val mouse: Mouse,
     val keyboard: Keyboard,
