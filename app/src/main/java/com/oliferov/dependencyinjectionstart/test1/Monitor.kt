@@ -1,4 +1,6 @@
 package com.oliferov.dependencyinjectionstart.test1
 
-class Monitor {
+import javax.inject.Inject
+
+class Monitor @Inject constructor() {
 }
