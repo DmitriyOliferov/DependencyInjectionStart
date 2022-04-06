@@ -4,8 +4,9 @@ import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleLocale
 import com.oliferov.dependencyinjectionstart.test2.data.mapper.ExampleMapper
 import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleRemoteDataSource
 import com.oliferov.dependencyinjectionstart.test2.domain.ExampleRepository
+import javax.inject.Inject
 
-class ExampleRepositoryImpl(
+class ExampleRepositoryImpl @Inject constructor(
     private val localeDataSource: ExampleLocaleDataSource,
     private val remoteDataSource: ExampleRemoteDataSource,
     private val mapper: ExampleMapper
