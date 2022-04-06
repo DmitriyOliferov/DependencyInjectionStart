@@ -4,19 +4,16 @@ import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleLocale
 import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleLocaleDataSourceImpl
 import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleRemoteDataSource
 import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleRemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
+
 
 @Module
-class DataModule {
+interface DataModule {
 
-    @Provides
-    fun providerExampleLocaleDataSource(impl: ExampleLocaleDataSourceImpl): ExampleLocaleDataSource {
-        return impl
-    }
+    @Binds
+    fun bindExampleLocaleDataSource(impl: ExampleLocaleDataSourceImpl): ExampleLocaleDataSource
 
-    @Provides
-    fun providerExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource{
-        return impl
-    }
+    @Binds
+    fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
