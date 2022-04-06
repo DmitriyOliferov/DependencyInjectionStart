@@ -5,10 +5,16 @@ import android.util.Log
 import com.oliferov.dependencyinjectionstart.R
 import javax.inject.Inject
 
-class ExampleApiService @Inject constructor(private val context: Context) {
+class ExampleApiService @Inject constructor(
+    private val context: Context,
+    private val timeMillis: Long
+) {
 
     fun method() {
-        Log.i(LOG_TAG, "ExampleApiService ${context.resources.getString(R.string.app_name)}")
+        Log.i(
+            LOG_TAG,
+            "ExampleApiService ${context.resources.getString(R.string.app_name)} - $timeMillis"
+        )
     }
 
     companion object {
