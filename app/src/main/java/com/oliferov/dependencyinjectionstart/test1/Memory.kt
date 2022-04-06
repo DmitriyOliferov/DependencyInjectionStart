@@ -1,4 +1,6 @@
 package com.oliferov.dependencyinjectionstart.test1
 
-class Memory {
+import javax.inject.Inject
+
+class Memory @Inject constructor() {
 }
