@@ -4,9 +4,8 @@ import android.content.Context
 import com.oliferov.dependencyinjectionstart.test2.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationDataScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 

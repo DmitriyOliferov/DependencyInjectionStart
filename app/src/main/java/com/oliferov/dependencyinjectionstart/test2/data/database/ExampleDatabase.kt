@@ -3,10 +3,10 @@ package com.oliferov.dependencyinjectionstart.test2.data.database
 import android.content.Context
 import android.util.Log
 import com.oliferov.dependencyinjectionstart.R
+import com.oliferov.dependencyinjectionstart.test2.di.ApplicationScope
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+
 class ExampleDatabase @Inject constructor(
     private val context: Context,
     private val timeMillis: Long
