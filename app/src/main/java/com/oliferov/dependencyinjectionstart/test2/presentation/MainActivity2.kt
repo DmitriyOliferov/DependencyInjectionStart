@@ -1,10 +1,8 @@
 package com.oliferov.dependencyinjectionstart.test2.presentation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.oliferov.dependencyinjectionstart.R
@@ -12,7 +10,7 @@ import com.oliferov.dependencyinjectionstart.test2.ExampleApp
 import com.oliferov.dependencyinjectionstart.test2.di.DaggerApplicationComponent
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -28,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val component by lazy {
         (application as ExampleApp).component
             .activityComponentFactory()
-            .create("MY_ID")
+            .create("MY_ID_2")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,11 +35,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewModel.method()
         viewModel2.method()
-        findViewById<TextView>(R.id.tv_hello_world).setOnClickListener {
-             Intent(this,MainActivity2::class.java).apply {
-                 startActivity(this)
-             }
-        }
     }
-
 }
