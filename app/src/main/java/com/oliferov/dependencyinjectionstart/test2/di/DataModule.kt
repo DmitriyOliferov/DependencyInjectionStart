@@ -1,9 +1,6 @@
 package com.oliferov.dependencyinjectionstart.test2.di
 
-import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleLocaleDataSource
-import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleLocaleDataSourceImpl
-import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleRemoteDataSource
-import com.oliferov.dependencyinjectionstart.test2.data.datasource.ExampleRemoteDataSourceImpl
+import com.oliferov.dependencyinjectionstart.test2.data.datasource.*
 import dagger.Binds
 import dagger.Module
 
@@ -17,6 +14,9 @@ interface DataModule {
 
     @ApplicationDataScope
 
-    @Binds
+    @Binds @ProdQualifier
     fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
+    @Binds @TestQualifier
+    fun bindTestRemoteDataSource(impl: TestRemoteDataSourceImpl): ExampleRemoteDataSource
 }
